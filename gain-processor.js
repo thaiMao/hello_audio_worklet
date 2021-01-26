@@ -28,9 +28,6 @@ class GainProcessor extends AudioWorkletProcessor {
     const input = inputs[0]; // Get the first input
     const output = outputs[0]; // Get the first output
 
-    const inputChannel1st = input[0]; // Get the 1st channel of the 1st input
-    const outputChannel1st = output[0]; // Get the 1st channel of the 1st output
-
     const gain = parameters.gain; // Get the parameter value array
 
     // Loop through each channel
