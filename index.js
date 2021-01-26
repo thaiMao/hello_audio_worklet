@@ -5,6 +5,7 @@ class GainWorkletNode extends AudioWorkletNode {
 }
 
 const btnElement = document.getElementById("btn");
+const gainElement = document.getElementById("gain");
 
 const context = new AudioContext();
 
@@ -22,5 +23,12 @@ context.audioWorklet.addModule("gain-processor.js").then(() => {
 
     isPlaying = true;
     oscillator.start();
+  };
+
+  gainElement.oninput = (event) => {
+    const { value } = event.currentTarget;
+
+    const gainParam = gainWorkletNode.parameters.get("gain");
+    gainParam.linearRampToValueAtTime(value, context.currentTime + 0.2);
   };
 });
