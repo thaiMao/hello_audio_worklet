@@ -30,6 +30,22 @@ class MyAudioWorkletProcessor extends AudioWorkletProcessor {
     const output = outputs[0]; // Get the first output
     const inputChannel1st = input[0]; // Get the 1st channel of the 1st input
     const outputChannel1st = output[0]; // Get the 1st channel of the 1st output
+
+    const myParamValues = parameters.myParam; // Get the parameter value array
+
+    const hasMyParamBeenConstantDuringRenderingQuantum =
+      myParamValues.length === 1;
+
+    if (hasMyParamBeenConstantDuringRenderingQuantum) {
+      for (let i = 0; i < inputChannel1st.length; ++i) {
+        outputChannel1st[i] = inputChannel1st[i] * myParamValues[0];
+      }
+    } else {
+      for (let i = 0; i < inputChannel1st.length; ++i) {
+        outputChannel1st[i] = inputChannel1st[i] * myParamValues[i];
+      }
+    }
+
   }
 }
 
