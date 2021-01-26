@@ -4,6 +4,15 @@
  */
 
 class MyAudioWorkletProcessor extends AudioWorkletProcessor {
+  static get parameterDescriptors() {
+    return [
+      {
+        name: "myParam",
+        defaultValue: 0.707,
+      },
+    ];
+  }
+
   constructor() {
     super();
   }
