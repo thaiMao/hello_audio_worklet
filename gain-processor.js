@@ -7,7 +7,7 @@ class GainProcessor extends AudioWorkletProcessor {
     return [
       {
         name: "gain",
-        defaultValue: 0.707,
+        defaultValue: 0.5,
       },
     ];
   }
