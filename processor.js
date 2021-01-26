@@ -17,6 +17,14 @@ class MyAudioWorkletProcessor extends AudioWorkletProcessor {
     super();
   }
 
+  /**
+   *
+   * The processor may have multiple inputs and outputs.
+   *
+   * Each input or output may have multiple channels.
+   *
+   * Return true to keeps the processor alive.
+   */
   process(inputs, outputs, parameters) {
     // code to process audio goes here...
   }
