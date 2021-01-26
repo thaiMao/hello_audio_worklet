@@ -1,4 +1,4 @@
-class MyAudioWorkletNode extends AudioWorkletNode {
+class GainWorkletNode extends AudioWorkletNode {
   constructor(context) {
     super(context, "gain-processor");
   }
@@ -9,7 +9,7 @@ const context = new AudioContext();
 context.audioWorklet.addModule("gain-processor.js").then(() => {
   const oscillator = new OscillatorNode(context);
 
-  const gainWorkletNode = new MyAudioWorkletNode(context);
+  const gainWorkletNode = new GainWorkletNode(context);
 
   oscillator.connect(gainWorkletNode).connect(context.destination);
 
