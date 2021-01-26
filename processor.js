@@ -2,7 +2,6 @@
  * This file is evaluated in AudioWorkletGlobalScope (the render thread),
  * when audioWorklet.addModule() is invoked in the main thread.
  */
-
 class MyAudioWorkletProcessor extends AudioWorkletProcessor {
   static get parameterDescriptors() {
     return [
@@ -28,6 +27,7 @@ class MyAudioWorkletProcessor extends AudioWorkletProcessor {
   process(inputs, outputs, parameters) {
     const input = inputs[0]; // Get the first input
     const output = outputs[0]; // Get the first output
+
     const inputChannel1st = input[0]; // Get the 1st channel of the 1st input
     const outputChannel1st = output[0]; // Get the 1st channel of the 1st output
 
@@ -46,6 +46,7 @@ class MyAudioWorkletProcessor extends AudioWorkletProcessor {
       }
     }
 
+    return true;
   }
 }
 
