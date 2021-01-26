@@ -26,7 +26,8 @@ class MyAudioWorkletProcessor extends AudioWorkletProcessor {
    * Return true to keeps the processor alive.
    */
   process(inputs, outputs, parameters) {
-    // code to process audio goes here...
+    const input = inputs[0]; // Get the first input
+    const output = outputs[0]; // Get the first output
   }
 }
 
